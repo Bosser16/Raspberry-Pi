@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './DrNim.css';
 
 export default function Application() {
+  
   const root = ReactDOM.createRoot(document.getElementById('game'));
 root.render( /*#__PURE__*/React.createElement(Start, null));
 
