@@ -3,14 +3,36 @@ import ReactDOM from 'react-dom/client';
 import './DrNim.css';
 
 export default function Application() {
-  
-  const root = ReactDOM.createRoot(document.getElementById('game'));
-root.render( /*#__PURE__*/React.createElement(Start, null));
 
-var marblesRemaining = document.getElementById('marbles');
+var marblesRemaining = 0;
 var inTurnTaken = 0;
 var current = 0;
 var computer = 0;
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render( /*#__PURE__*/React.createElement(Start, null));
+
+function Rules () {
+  return (
+      <body>
+  <div id = "desc">
+  <h1 id = "title">Dr. Nim game</h1>
+  <h2 id = "rules">Here's how you play: </h2>
+  <ol id = "list">
+    <li>The Game starts with a random amount of marbles</li>
+    <li>Each turn you must take 1, 2, or 3 marbles</li>
+    <li>Dr. Nim will then take 1, 2, or 3 marbles</li>
+    <li>The Person who takes the last marble wins</li>
+  </ol>
+  <h1 id = "marbles">{marblesRemaining}</h1>
+  <h3 id = "remaining"> Marbles Remaining </h3>
+</div>
+<div id = "game">
+<button className= "btn" onClick= {AppCall}>Start</button>
+</div>
+</body>
+);
+}
 
 function RandomNumber() {
   let min = 5;
@@ -19,11 +41,8 @@ function RandomNumber() {
 }
 
 function Start() {
-  return /*#__PURE__*/(
-    React.createElement("div", null, /*#__PURE__*/
-    React.createElement("button", { className: "btn", onClick: AppCall }, "Start")));
-
-
+  const root = ReactDOM.createRoot(document.getElementById('root'));
+  root.render( /*#__PURE__*/React.createElement(Rules, null));
 }
 
 function App() {
@@ -34,9 +53,6 @@ function App() {
     React.createElement("button", { className: "btn", id: "take", onClick: TakeMarble }, "Take Marble"), /*#__PURE__*/
     React.createElement("button", { className: "btn", id: "turn", onClick: Delay }, "End Turn"), /*#__PURE__*/
     React.createElement("button", { className: "btn", onClick: Reset }, " Restart"))));
-
-
-
 }
 
 function TakeMarble() {
@@ -51,7 +67,8 @@ function TakeMarble() {
 
   {
     current -= 1;
-    marblesRemaining.textContent = current;
+    marblesRemaining = current;
+    document.getElementById('marbles').innerText = marblesRemaining;
   }
   if (current === 0)
   {
@@ -81,7 +98,8 @@ function SwitchTurn() {
   {
     current -= RandomNumber() % 3 + 1;
   }
-  marblesRemaining.textContent = current;
+  marblesRemaining = current;
+  document.getElementById('marbles').innerText = marblesRemaining;
   if (current === 0)
   {
     NimWinnerCall();
@@ -91,13 +109,15 @@ function SwitchTurn() {
 function Restart() {
   current = RandomNumber();
   inTurnTaken = 0;
-  marblesRemaining.textContent = current;
+  marblesRemaining = current;
+  document.getElementById('marbles').innerText = marblesRemaining;
 }
 
 function Reset() {
   current = RandomNumber();
   inTurnTaken = 0;
-  marblesRemaining.textContent = current;
+  marblesRemaining = current;
+  document.getElementById('marbles').innerText = marblesRemaining;
   document.getElementById("take").disabled = false;
   document.getElementById("turn").disabled = false;
 }
@@ -105,7 +125,8 @@ function Reset() {
 function Winner(props) {
   current = 0;
   inTurnTaken = 0;
-  marblesRemaining.textContent = current;
+  marblesRemaining = current;
+  document.getElementById('marbles').innerText = marblesRemaining;
   return /*#__PURE__*/(
     React.createElement("div", { id: "display" }, /*#__PURE__*/
     React.createElement("h1", null, props.title),
@@ -122,6 +143,7 @@ function Winner(props) {
 
 function AppCall() {
   Restart();
+  document.getElementById('marbles').innerText = marblesRemaining;
   const root = ReactDOM.createRoot(document.getElementById('game'));
   root.render( /*#__PURE__*/React.createElement(App, null));
 }
