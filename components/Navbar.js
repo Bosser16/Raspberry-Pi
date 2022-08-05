@@ -42,7 +42,7 @@ function updateToolbar(){
 
 return (
     <Box>
-        <AppBar>
+        <AppBar position='sticky' >
             <StyledToolbar>
                 <Typography variant='h4'>
                     {title}
