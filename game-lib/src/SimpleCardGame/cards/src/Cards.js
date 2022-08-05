@@ -33,7 +33,7 @@ function Game (props) {
 }
 
 function CallGame () {
-  root.render(<Game img=""/>);
+  root.render(<Game />);
 }
 
 function DrawCard () {

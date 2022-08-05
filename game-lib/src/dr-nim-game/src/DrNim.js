@@ -14,7 +14,7 @@ root.render( /*#__PURE__*/React.createElement(Start, null));
 
 function Rules () {
   return (
-      <body>
+    <div>
   <div id = "desc">
   <h1 id = "title">Dr. Nim game</h1>
   <h2 id = "rules">Here's how you play: </h2>
@@ -30,7 +30,7 @@ function Rules () {
 <div id = "game">
 <button className= "btn" onClick= {AppCall}>Start</button>
 </div>
-</body>
+</div>
 );
 }
 
@@ -41,18 +41,16 @@ function RandomNumber() {
 }
 
 function Start() {
-  const root = ReactDOM.createRoot(document.getElementById('root'));
   root.render( /*#__PURE__*/React.createElement(Rules, null));
 }
 
 function App() {
   return /*#__PURE__*/(
     React.createElement("div", { id: "display" }, /*#__PURE__*/
-    React.createElement("div", null, /*#__PURE__*/
     React.createElement("h3", { id: "whoturn" }, "Your Turn"), /*#__PURE__*/
     React.createElement("button", { className: "btn", id: "take", onClick: TakeMarble }, "Take Marble"), /*#__PURE__*/
     React.createElement("button", { className: "btn", id: "turn", onClick: Delay }, "End Turn"), /*#__PURE__*/
-    React.createElement("button", { className: "btn", onClick: Reset }, " Restart"))));
+    React.createElement("button", { className: "btn", onClick: Reset }, " Restart")));
 }
 
 function TakeMarble() {
@@ -80,14 +78,14 @@ function Delay() {
   document.getElementById("take").disabled = true;
   document.getElementById("turn").disabled = true;
   setTimeout(SwitchTurn, 2000);
-  const root = ReactDOM.createRoot(document.getElementById('whoturn'));
-  root.render( /*#__PURE__*/React.createElement("h1", { className: "whosturn" }, "Dr. Nim's Turn"));
+  const turn = ReactDOM.createRoot(document.getElementById('whoturn'));
+  turn.render( "Dr. Nim's Turn");
 }
 
 function SwitchTurn() {
   document.getElementById("take").disabled = false;
-  const root = ReactDOM.createRoot(document.getElementById('whoturn'));
-  root.render( /*#__PURE__*/React.createElement("h1", { className: "humturn" }, "Your Turn"));
+  const turn = ReactDOM.createRoot(document.getElementById('whoturn'));
+  turn.render("Your Turn");
   computer = current % 4;
   inTurnTaken = 0;
   for (var i = 0; i < computer; i++)
@@ -144,13 +142,13 @@ function Winner(props) {
 function AppCall() {
   Restart();
   document.getElementById('marbles').innerText = marblesRemaining;
-  const root = ReactDOM.createRoot(document.getElementById('game'));
-  root.render( /*#__PURE__*/React.createElement(App, null));
+  const game = ReactDOM.createRoot(document.getElementById('game'));
+  game.render( /*#__PURE__*/React.createElement(App, null));
 }
 
 function NimWinnerCall() {
-  const root = ReactDOM.createRoot(document.getElementById('game'));
-  root.render( /*#__PURE__*/React.createElement(Winner, {
+  const game = ReactDOM.createRoot(document.getElementById('game'));
+  game.render( /*#__PURE__*/React.createElement(Winner, {
     title: "DR. NIM WINS",
     img: true,
     smallTitle: "YOU LOSE" }));
@@ -158,8 +156,8 @@ function NimWinnerCall() {
 }
 
 function HumWinnerCall() {
-  const root = ReactDOM.createRoot(document.getElementById('game'));
-  root.render( /*#__PURE__*/React.createElement(Winner, {
+  const game = ReactDOM.createRoot(document.getElementById('game'));
+  game.render( /*#__PURE__*/React.createElement(Winner, {
     title: "CONGRATULATIONS",
     img: false,
     smallTitle: "YOU WIN" }));

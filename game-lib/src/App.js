@@ -19,7 +19,7 @@ export default function App() {
     setState({ ...state, [anchor]: open });
   };
 
-  const nameArray = ["Dr. Nim", "Card Game", "TicTacToe", "Rock Paper Scissors"];
+  const nameArray = ["Dr. Nim", "Card Dealer", "TicTacToe", "Rock Paper Scissors"];
   const list = (anchor) => (
     <Box
       sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
@@ -41,7 +41,7 @@ export default function App() {
 
   return (
     <div>
-    {(["Game Library"]).map((anchor) => (
+    {(['Game Library']).map((anchor) => (
       <React.Fragment key={anchor}>
         <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
         <Drawer
@@ -56,3 +56,4 @@ export default function App() {
   </div>
   );
   }
+  

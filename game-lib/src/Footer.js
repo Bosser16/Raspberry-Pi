@@ -1,8 +1,10 @@
 
 import {Button} from '@mui/material';
 import React from "react"
-import ReactDOM from "react-dom"
+import ReactDOM from "react-dom/client"
 import App from './App';
+
+
 
 
 export default function Footer () {
