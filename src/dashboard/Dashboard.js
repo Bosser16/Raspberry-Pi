@@ -1,12 +1,13 @@
 import React from 'react'
 import { Box, Card, CardContent, Grid, styled, Typography } from '@mui/material'
+import DashCard from '../components/DashCard'
 
 const StyledBox = styled(Box)({
   display: 'flex',
   justifyContent: 'center',
 })
 
-export default function Dashboard({cardTitle}) {
+export default function Dashboard({cardTitle, cardImage}) {
   return (
     <StyledBox 
       flexGrow={1}
@@ -28,13 +29,7 @@ export default function Dashboard({cardTitle}) {
           direction="row"
           gap={8}
         > 
-          {cardTitle.map(cardTitle => (
-            <Card sx={{height: 300, width: 200,}}>
-              <CardContent>
-                <Typography textAlign='center'>{cardTitle}</Typography> 
-              </CardContent>
-            </Card>
-          ))}
+          <DashCard cardImage={cardImage} cardTitle={cardTitle}/>
         </Grid>
       </Grid>
     </StyledBox> 

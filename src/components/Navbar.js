@@ -73,7 +73,7 @@ return (
                 <Typography variant='h6' component='div'>Side Pannel</Typography>
                 <List>
                     {buttons.slice(updateToolbar()).map(buttons => (
-                        <ListItemButton variant=''>
+                        <ListItemButton>
                             <Typography>{buttons}</Typography>
                         </ListItemButton>
                     ))}
