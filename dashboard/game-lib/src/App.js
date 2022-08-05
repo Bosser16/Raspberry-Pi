@@ -1,5 +1,5 @@
 import React from "react"
-import TicTacToe from './tic-tac-toe/src/TicTacToe';
+import TicTacToe from "/Raspberry-Pi/dashboard/game-lib/src/App.js";
 import CardGame from './SimpleCardGame/cards/src/Cards';
 import DrNim from './dr-nim-game/src/DrNim';
 import Roshambo from "./RockPaperScissors/src/Roshambo";
