@@ -1,23 +1,34 @@
 
-import {Card, CardContent, CardMedia, Typography, CardActionArea} from '@mui/material';
+import {Card, CardContent, CardMedia, Typography, CardActionArea, } from '@mui/material';
 
 
 export default function DashCard(props) {
-  return (
-    <Card sx={{ width: 200, height: 300, margin: "20px"}}>
-      <CardActionArea onClick={/*Insert Function*/console.log("add function")}>
+
+
+const MakeDashCards = (props.Img.map((insertImg, index) => (
+<Card sx={{ width: 200, height: 300, margin: "20px"}}>
+      <CardActionArea onClick={()=>/*Insert Function*/alert("add function")}>
       <CardMedia
         component="img"
-        height={200}
-        image={props.Img}
+        height={230}
+        image={insertImg}
         alt="( ͡~ ͜ʖ ͡°) Hello There"
       />
-      <CardContent>
-        <Typography variant="h5" component="div" textAlign={"center"}>
-          {props.Title}
+      <CardContent sx={{padding:0}}>
+        <Typography 
+        display={"flex"} variant="h5" component="div" justifyContent={"center"} 
+        height={70} backgroundColor="#3F51B5" color={"white"} alignItems={"center"}> 
+          {props.Title[index]}
         </Typography>
       </CardContent>
       </CardActionArea>
     </Card>
+      )))
+
+  return (
+    
+    MakeDashCards
+    
   );
 }
+
