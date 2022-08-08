@@ -6,13 +6,13 @@ export default function DashCard(props) {
 
 
 const MakeDashCards = (props.cardImage.map((insertImg, index) => (
-<Card sx={{ width: 200, height: 300, margin: "20px"}}>
+<Card sx={{ width: 200, height: 300}}>
       <CardActionArea onClick={()=>/*Insert Function*/alert("add function")}>
       <CardMedia
         component="img"
         height={230}
         image={insertImg}
-        alt="( ͡~ ͜ʖ ͡°) Hello There"
+        alt="( ͡~ ͜ʖ ͡°) Hello There, it seems you are missing an image ( ͡° ͜ʖ ͡°)"
       />
       <CardContent sx={{padding:0}}>
         <Typography 
