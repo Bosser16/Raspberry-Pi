@@ -2,13 +2,24 @@ import { Box, ListItemButton } from '@mui/material';
 import React from 'react';
 import Navbar from './components/Navbar';
 import Dashboard from './dashboard/Dashboard';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import GameLib from './dashboard/game-lib/GameLib';
+import Test from './components/Test';
+import SodoFaculty from './dashboard/sodo-faculty/SodoFaculty';
+import HardwareInventory from './dashboard/hardware-inventory/HardwareInventory';
 
 export default function App() {
   return (
+    /*
     <Box>
       <Navbar title={title} buttons={buttons}/>
-      <Dashboard cardTitle={cardTitle} cardImage={cardImage}/>
+      <Dashboard cardTitle={cardTitle} cardImage={cardImage} />
     </Box>
+    */
+   <Box>
+    <HardwareInventory cardTitle={cardTitle} cardImage={cardImage} />
+   </Box>
+    
   )
 }
 
