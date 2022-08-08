@@ -45,9 +45,6 @@ class Person extends React.Component{
 
 
 class Screen extends React.Component{
-  constructor(props){
-    super(props);
-  }
 
   newPerson(image, organization, name, jobTitle, left ){
     return(

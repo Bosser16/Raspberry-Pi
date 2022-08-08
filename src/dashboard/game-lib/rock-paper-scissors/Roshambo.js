@@ -1,14 +1,11 @@
 import React from "react";
 import ReactDOM from 'react-dom/client';
-import './App.css';
+import './Roshambo.css';
 
 
 function Roshambo() {
 
 class Finish extends React.Component{
-  constructor(props){
-    super(props);
-  }
 
   compMove(){
     const moves = ["rock", "paper", "scissors"];
@@ -64,10 +61,6 @@ root.render(<Start />);
 }    
 
 class Start extends React.Component{
-  constructor(props){
-    super(props);
-    let move;
-  }
 
 
   setMove(move){
@@ -104,4 +97,4 @@ root.render(<Start />);
 
 }
 
-export default App;
+export default Roshambo;

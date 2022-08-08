@@ -1,13 +1,16 @@
-
+import { useNavigate } from "react-router-dom";
 import {Card, CardContent, CardMedia, Typography, CardActionArea, } from '@mui/material';
 
 
 export default function DashCard(props) {
 
+let navigate = useNavigate(); 
+const cardLink = ['/', '/gamelibrary', '/sodofaculty', '/hardwareinventory', 'FAQ'];
+
 
 const MakeDashCards = (props.cardImage.map((insertImg, index) => (
 <Card sx={{ width: 200, height: 300}}>
-      <CardActionArea onClick={()=>/*Insert Function*/alert("add function")}>
+      <CardActionArea onClick={()=>{navigate(cardLink[index])}}>
       <CardMedia
         component="img"
         height={230}
