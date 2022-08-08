@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Card, CardContent, Grid, styled, Typography } from '@mui/material'
+import { Box, Grid, styled } from '@mui/material'
 import DashCard from '../components/DashCard'
 
 const StyledBox = styled(Box)({
@@ -7,7 +7,7 @@ const StyledBox = styled(Box)({
   justifyContent: 'center',
 })
 
-export default function Dashboard({cardTitle, cardImage}) {
+export default function Dashboard({cardTitle, cardImage, links}) {
   return (
     <StyledBox 
       flexGrow={1}
@@ -29,7 +29,7 @@ export default function Dashboard({cardTitle, cardImage}) {
           direction="row"
           gap={8}
         > 
-          <DashCard cardImage={cardImage} cardTitle={cardTitle}/>
+          <DashCard cardImage={cardImage} cardTitle={cardTitle} links={links} />
         </Grid>
       </Grid>
     </StyledBox> 

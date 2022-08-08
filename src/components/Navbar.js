@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { AppBar, Box, Button, Drawer, IconButton, List, ListItemButton, styled, Toolbar, Typography } from '@mui/material'
 import { Menu } from '@mui/icons-material'
 import useWindowDimensions from './useWindowDimensions';
+import { useNavigate, Link } from "react-router-dom";
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
     display: 'flex',
@@ -14,7 +15,9 @@ const HorizonalBox = styled(Box)({ // creates a Box that adds components from le
     alignItems: 'center',
 })
 
-export default function Navbar({buttons, title}) {
+export default function Navbar({buttons, title, links}) {
+    
+let navigate = useNavigate(); 
 
 const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 const windowSize = useWindowDimensions()
@@ -50,8 +53,8 @@ return (
                 <HorizonalBox>
                     <HorizonalBox gap={3}>
                         <HorizonalBox>
-                            {buttons.slice(0, updateToolbar()).map(buttons => (
-                                <Button variant=''>{buttons}</Button>
+                            {buttons.slice(0, updateToolbar()).map((buttons, index) => (
+                                <Button key={index} variant='' onClick={()=>{navigate(links[index])}}>{buttons}</Button>
                             ))}
                         </HorizonalBox>
                         <IconButton onClick={() => setIsDrawerOpen(true)}>
@@ -72,8 +75,8 @@ return (
             <Box width='250px' textAlign='center'>
                 <Typography variant='h6' component='div'>Side Pannel</Typography>
                 <List>
-                    {buttons.slice(updateToolbar()).map(buttons => (
-                        <ListItemButton>
+                    {buttons.slice(updateToolbar()).map((buttons, index) => (
+                        <ListItemButton key={index} onClick={()=>{navigate(links[index])}}>
                             <Typography>{buttons}</Typography>
                         </ListItemButton>
                     ))}

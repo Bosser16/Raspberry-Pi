@@ -1,15 +1,18 @@
+import { useNavigate } from "react-router-dom";
 import {Card, CardContent, CardMedia, Typography, CardActionArea, } from '@mui/material';
 
 export default function DashCard(props) {
+  
+let navigate = useNavigate(); 
 
-const MakeDashCards = (props.cardImage.map((insertImg, index) => (
-<Card sx={{ width: 200, height: 300}}>
-      <CardActionArea onClick={()=>/*Insert Function*/alert("add function")}>
+const MakeDashCards = (props.cardImage.map((insertImg, index, links) => (
+<Card key={index} sx={{ width: 200, height: 300}}>
+      <CardActionArea onClick={()=>{navigate(props.links[index])}}>
       <CardMedia
         component="img"
         height={230}
         image={insertImg}
-        alt="( ͡~ ͜ʖ ͡°) Hello There"
+        alt="( ͡~ ͜ʖ ͡°) Hello There, it seems you are missing an image ( ͡° ͜ʖ ͡°)"
       />
       <CardContent sx={{padding:0}}>
         <Typography 
