@@ -1,14 +1,6 @@
 import { Box, Grid, InputBase, styled, Typography } from '@mui/material'
 import React from 'react'
 import DashCardCircular from '../../components/DashCardCircular'
-import Navbar from '../../components/Navbar'
-
-  const title = 'Hardware Inventory'
-
-  const buttons = [
-      'Bruh',
-      'yes',
-  ]
 
   const StyledBox = styled(Box)({
     display: 'flex',
@@ -31,12 +23,11 @@ import Navbar from '../../components/Navbar'
   export default function HardwareInventory({cardTitle, cardImage}) {
     return (
       <Box>
-        <Navbar title={title} buttons={buttons} />
         <RightJustifyBox
           paddingTop={3}
           paddingRight={3}
         >
-              <Search><InputBase placeholder="search..."/></Search>
+          <Search><InputBase placeholder="search..."/></Search>
         </RightJustifyBox>
         <StyledBox 
           flexGrow={1}
