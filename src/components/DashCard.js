@@ -16,7 +16,7 @@ const MakeDashCards = (props.cardImage.map((insertImg, index, links) => (
       />
       <CardContent sx={{padding:0}}>
         <Typography 
-        display={"flex"} variant="h5" component="div" justifyContent={"center"} 
+        display={"flex"} variant="h6" component="div" justifyContent={"center"} 
         height={70} backgroundColor="#3F51B5" color={"white"} alignItems={"center"}> 
           {props.cardTitle[index]}
         </Typography>
