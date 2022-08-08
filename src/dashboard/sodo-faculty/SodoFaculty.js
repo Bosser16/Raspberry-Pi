@@ -7,13 +7,10 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 
 
-function App() {
+export default function SodoFaculty() {
 
 class Person extends React.Component{
-  constructor(props){
-    super(props);
-  }
-
+ 
   createCard(){
     return(
       <Card sx={{maxWidth: 294, minWidth: 294, maxHeight: 500, borderRadius: 0, marginRight:"10px", marginTop:"10px", marginBottom:"10px", marginLeft:'10px'}}>
@@ -98,4 +95,3 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Screen />);
 
 }
-export default App;
