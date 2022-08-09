@@ -9,15 +9,30 @@ const MakeDashCards = (props.cardImage.map((insertImg, index) => (
 <Card key={index} sx={{ width: 200, height: 300}}>
       <CardActionArea onClick={()=>{navigate(props.links[index])}}>
       <CardMedia
-        component="img"
-        height={230}
-        image={insertImg}
-        alt="( ͡~ ͜ʖ ͡°) Hello There, it seems you are missing an image ( ͡° ͜ʖ ͡°)"
-      />
-      <CardContent sx={{padding:0}}>
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          paddingBottom: 5.1,
+        }}
+      >
+        {insertImg}
+      </CardMedia>
+      <CardContent 
+        sx={{
+          padding: 0,
+        }}
+      >
         <Typography 
-        display={"flex"} variant="h6" component="div" justifyContent={"center"} 
-        height={70} backgroundColor="#3F51B5" color={"white"} alignItems={"center"}> 
+          display={"flex"} 
+          variant="h6" 
+          component="div" 
+          justifyContent={"center"} 
+          height={70} 
+          backgroundColor="#3F51B5" 
+          color={"white"} 
+          alignItems={"center"}
+        > 
           {props.cardTitle[index]}
         </Typography>
       </CardContent>
