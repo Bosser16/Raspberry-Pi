@@ -1,7 +1,6 @@
 import React from 'react';
 import {Card, CardContent, CardMedia, Typography } from '@mui/material';
 
-
 export default function SodoFaculty(people) { 
   console.log(people)
   const MakeSodoCards = (people.map(({name, picture}) => (

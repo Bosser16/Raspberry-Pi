@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const HardwareInventory = props => {
+const Image = props => {
   const { size } = props;
   return (
     <svg
@@ -18,12 +18,12 @@ const HardwareInventory = props => {
   );
 };
 
-HardwareInventory.propTypes = {
+Image.propTypes = {
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
 
-HardwareInventory.defaultProps = {
-  size: '100'
+Image.defaultProps = {
+  size: '180'
 };
 
-export default HardwareInventory;
+export default Image;

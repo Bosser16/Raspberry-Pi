@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Dashboard = props => {
+const Image = props => {
   const { size } = props;
   return (
     <svg
@@ -20,12 +20,12 @@ const Dashboard = props => {
 };
 
 
-Dashboard.propTypes = {
+Image.propTypes = {
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
 
-Dashboard.defaultProps = {
-  size: '100'
+Image.defaultProps = {
+  size: '180'
 };
 
-export default Dashboard;
+export default Image;
