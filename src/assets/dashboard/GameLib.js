@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const GameLib = props => {
+const Image = props => {
   const { size } = props;
   return (
     <svg
@@ -58,12 +58,12 @@ const GameLib = props => {
   );
 };
 
-GameLib.propTypes = {
+Image.propTypes = {
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
 
-GameLib.defaultProps = {
-  size: '100'
+Image.defaultProps = {
+  size: '180'
 };
 
-export default GameLib;
+export default Image;
