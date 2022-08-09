@@ -27,7 +27,7 @@ export default function App() {
           />
           <Route 
             path="/sodo-faculty" 
-            element={<SodoFaculty />} 
+            element={<SodoFaculty people={people}/>} 
           />
           <Route 
             path="/hardware-inventory" 
@@ -77,6 +77,23 @@ const dashboardCardImage = [
 // SODO FACULTY
 /*================================================================================================================================================*/
 
+  /*person = [ 'name', 'picture', 'organization', 'title']*/
+
+  const people = [ 
+    {name:'Karen Fairclough', picture: 'logo192.png', organization: 'SODO/MXDES', title: 'SODO Section Chief” (Supervisor)'}, 
+    {name: 'Kasey Thompson',picture:'logo192.png', organization:'SODO/MXDES', title:'SODO Program Director'},
+    {name: 'Steve Turner',picture:'logo192.png', organization:'Launchpad', title:'Launchpad Program Director'},
+    {name: 'Corbin Bell', picture:'logo192.png', organization:'SWEG University',title:'Organizational Training Program Manager'},
+    {name: 'Tawnya Coulter',picture:'logo192.png', organization:'SWEG University', title:'Planner/Scheduler'},
+    {name: 'Timothy Herrick',picture:'logo192.png', organization:'SWEG University', title:'Instructor; weekly TUGS facilitator'},
+    {name: 'Sarah Nelson',picture:'logo192.png', organization:'SWEG Internships', title:'Intern Program Manager'},
+    {name:'Cassie Unguren',picture:'logo192.png', organization:'SWEG New Hires',  title:'New Hire Coordinator Program Manager'},
+    {name: 'Kammi Mears',picture:'logo192.png', organization:'SWEG Connections', title:'Retention and Mentoring Program Manager'},
+    {name: 'Daniel Hillstead',picture:'logo192.png', organization:'SODO faculty', title:'manages Pluralsight licenses'},
+    {name: 'Jesse Farb',picture:'logo192.png', organization:'SODO faculty', title:'UI/UX instructor'},
+    {name: 'Ashlee Ward',picture:'logo192.png', organization:'SODO faculty', title:'Timesheets'},
+    {name:'Jessica Collyer',picture:'logo192.png', organization:'SODO faculty', title:'rotating responsibilities'}
+  ]
 
 // HARDWARE INVENTORY
 /*================================================================================================================================================*/

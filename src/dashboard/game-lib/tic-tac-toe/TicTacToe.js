@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom/client'
 import Game from './components/Game'
 // PropTypes is disabled
 
-export default function App() {
-  return (
-    <Game />
-  )
-}
+const root = ReactDOM.createRoot(
+  document.getElementById('content')
+);
 
-function GameCall() {
-  const root = ReactDOM.createRoot(document.getElementById('root'));
-  root.render(<Game />);
+const element = <Game />;
+
+export default function TicTacToe() {
+  return (
+    root.render(element)
+  )
 }
