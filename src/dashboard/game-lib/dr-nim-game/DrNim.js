@@ -9,7 +9,7 @@ var inTurnTaken = 0;
 var current = 0;
 var computer = 0;
 
-const root = ReactDOM.createRoot(document.getElementById('content'));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render( /*#__PURE__*/React.createElement(Start, null));
 
 function Rules () {

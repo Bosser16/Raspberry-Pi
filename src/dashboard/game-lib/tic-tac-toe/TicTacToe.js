@@ -4,7 +4,7 @@ import Game from './components/Game'
 // PropTypes is disabled
 
 const root = ReactDOM.createRoot(
-  document.getElementById('content')
+  document.getElementById('root')
 );
 
 const element = <Game />;
