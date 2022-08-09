@@ -9,7 +9,7 @@ var inTurnTaken = 0;
 var current = 0;
 var computer = 0;
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('content'));
 root.render( /*#__PURE__*/React.createElement(Start, null));
 
 function Rules () {
@@ -41,7 +41,6 @@ function RandomNumber() {
 }
 
 function Start() {
-  const root = ReactDOM.createRoot(document.getElementById('root'));
   root.render( /*#__PURE__*/React.createElement(Rules, null));
 }
 

@@ -5,7 +5,7 @@ export default function DashCard(props) {
   
 let navigate = useNavigate(); 
 
-const MakeDashCards = (props.cardImage.map((insertImg, index, links) => (
+const MakeDashCards = (props.cardImage.map((insertImg, index) => (
 <Card key={index} sx={{ width: 200, height: 300}}>
       <CardActionArea onClick={()=>{navigate(props.links[index])}}>
       <CardMedia

@@ -29,6 +29,8 @@ const HorizonalBox = styled(Box)(() => ({
     display: 'flex',
   }));
 
+
+  
 export default function Game() {
   const [state, dispatch] = useReducer(reducer, {
     xIsNext: true,
